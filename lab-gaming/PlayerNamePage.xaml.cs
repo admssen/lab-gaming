@@ -198,9 +198,7 @@ namespace lab_gaming
             Grid keygrid = new Grid
             {
                 RowDefinitions =
-                    {
-                        new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }
-                    },
+                    { new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ } },
                 ColumnDefinitions =
                     {
                         new ColumnDefinition{ Width=GridLength.Star }, new ColumnDefinition{ Width=GridLength.Star },
@@ -282,9 +280,7 @@ namespace lab_gaming
         }
 
         private void TRASFERTOMENUPAGE(object sender, System.EventArgs e)
-        {
-            GOTOMENU();
-        }
+        { GOTOMENU(); }
 
         private void ERASE() { PlayerName.Text = ""; CleanseButton.IsEnabled = false; }
 
@@ -297,4 +293,5 @@ namespace lab_gaming
             Application.Current.Quit();
         }
     }
+
 }
