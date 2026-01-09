@@ -114,9 +114,7 @@ namespace lab_gaming
         }
 
 		private async void PINGSERVER(object sender, System.EventArgs e)
-		{
-            await CASTPING();
-        }
+		{ await CASTPING(); }
 
 		private void SPAWNPUZZLE()
 		{
@@ -183,9 +181,7 @@ namespace lab_gaming
             Grid keygrid = new Grid
             {
                 RowDefinitions =
-                    {
-                        new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }
-                    },
+                    { new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ }, new RowDefinition{ } },
                 ColumnDefinitions =
                     {
                         new ColumnDefinition{ Width=GridLength.Star }, new ColumnDefinition{ Width=GridLength.Star },
@@ -222,14 +218,10 @@ namespace lab_gaming
 		}
 
         private void GOTOMAIN()
-        {
-            Application.Current.MainPage = menupageLinkPrivate;
-        }
+        { Application.Current.MainPage = menupageLinkPrivate; }
 
 		private void TRASFERTOMENUPAGE(object sender, System.EventArgs e)
-        {
-            GOTOMAIN();
-        }
+        { GOTOMAIN(); }
 
 		private void DRAWCURSOR()
 		{
@@ -276,26 +268,20 @@ namespace lab_gaming
             await Task.Delay(1600);
             GOTOMAIN();
             Device.BeginInvokeOnMainThread(() =>
-            {
-                watch.Text = AppResource.Victory;
-            });
+            { watch.Text = AppResource.Victory; });
         }
 
         private async void DEFEAT()
         {
             Device.BeginInvokeOnMainThread(() =>
-            {
-                DISABLETOMENUBUTTON();
-            });
+            { DISABLETOMENUBUTTON(); });
             judge.didplayerwin = false;
             judge.didplayerlose = true;
             tickingtimer.IsToggled = false;
             await Task.Delay(1600);
             GOTOMAIN();
             Device.BeginInvokeOnMainThread(() =>
-            {
-                watch.Text = AppResource.Defeat;
-            });
+            { watch.Text = AppResource.Defeat; });
         }
 
         private void PROCESSWORD()
@@ -331,15 +317,11 @@ namespace lab_gaming
                         { checkword = checkword + char.ToLower(letters[word_on][i].Text[0]); }
                         string isvalid = WORDLE.REQUESTWORD(localePrivate, checkword);
                         if (isvalid == "TRUE")
-                        {
-                            PROCESSWORD();
-                        }
+                        { PROCESSWORD(); }
                         else
                         {
                             for (int i=0; i<letter_amount; i++)
-                            {
-                                letters[word_on][i].Text = "";
-                            }
+                            { letters[word_on][i].Text = ""; }
                             letter_on = 0;
                             DRAWCURSOR();
                         }
@@ -354,4 +336,5 @@ namespace lab_gaming
             }
         }
     }
+
 }
