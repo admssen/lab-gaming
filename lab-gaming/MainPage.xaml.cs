@@ -116,9 +116,7 @@ namespace lab_gaming
                 UPDATEHISTORY();
             }
             else
-            {
-                historyLEFT.IsEnabled = false;
-            }
+            { historyLEFT.IsEnabled = false; }
         }
 
         private void HRIGHT(object sender, System.EventArgs e)
@@ -131,9 +129,7 @@ namespace lab_gaming
                 UPDATEHISTORY();
             }
             else
-            {
-                historyRIGHT.IsEnabled = false;
-            }
+            { historyRIGHT.IsEnabled = false; }
         }
 
         public void INITIATEGAME()
@@ -156,9 +152,7 @@ namespace lab_gaming
                 TimeSpan diff = DateTime.Now - startedat;
                 string timerrecord = string.Format("{0:00}:{1:00}:{2:00}", (int)diff.TotalHours, (int)diff.Minutes, (int)diff.Seconds);
                 Device.BeginInvokeOnMainThread(() =>
-                {
-                    GameTimer.Text = timerrecord;
-                });
+                { GameTimer.Text = timerrecord; });
                 judge.howlong = timerrecord;
                 return not_over;
             });
@@ -189,9 +183,7 @@ namespace lab_gaming
             DISABLETOGAMEBUTTON();
             var trigger = (Switch)sender;
             if (!trigger.IsToggled)
-            {
-                not_over = false;
-            }
+            { not_over = false; }
             GPage = null;
             ButtonNewWord.IsEnabled = true;
             ButtonRetryRandom.IsEnabled = true;
@@ -291,3 +283,4 @@ namespace lab_gaming
         { Application.Current.MainPage = GPage; }
     }
 }
+
