@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_gaming.App">
+    <Application.Resources>
+        <ResourceDictionary Source="/Themes/DarkTheme.xaml" />
+        <Style TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{DynamicResource StackLayoutBackgroundColor}" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource LabelTextColor}" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{DynamicResource ButtonBackgroundColor}" />
+            <Setter Property="TextColor" Value="{DynamicResource ButtonTextColor}" />
+        </Style>
+        <Style x:Key="SpecialField" TargetType="StackLayout">
+            <Setter Property="BackgroundColor" Value="{DynamicResource SpecialFieldBackgroundColor}" />
+        </Style>
+        <Style x:Key="SpecialText" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource SpecialTextColor}" />
+        </Style>
+        <Style x:Key="Timer" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource TimerTextColor}" />
+        </Style>
+        <Style x:Key="History" TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource HistoryTextColor}" />
+        </Style>
+        <Style x:Key="HistoryButton" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{DynamicResource HistoryButtonColor}" />
+        </Style>
+        <Style x:Key="Confirm" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{DynamicResource ConfirmButtonColor}" />
+        </Style>
+        <Style x:Key="Delete" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{DynamicResource DeleteButtonColor}" />
+        </Style>
+    </Application.Resources>
+</Application>

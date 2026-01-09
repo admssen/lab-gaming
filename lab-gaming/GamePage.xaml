@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_gaming.GamePage">
+
+    <StackLayout VerticalOptions="Fill" Margin="0, 0 , 0, 0" Spacing="0">
+        <StackLayout BackgroundColor="#222222" Orientation="Horizontal">
+            <StackLayout HorizontalOptions="Start" Margin="50, 10, 0, 10" WidthRequest="200" BackgroundColor="Transparent">
+                <Label x:Name="DictStrictLabel" Text="DICTIONARY STRICT" FontSize="16" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" VerticalOptions="CenterAndExpand" Margin="0, 0, 0, 0" TextColor="#ffbb88" />
+            </StackLayout>
+            <StackLayout HorizontalOptions="EndAndExpand" Margin="0, 10, 50, 10" WidthRequest="90" BackgroundColor="Transparent">
+                <Switch x:Name="OnlineSwitch" Toggled="PINGSERVER" HorizontalOptions="Center" />
+                <Label x:Name="ServerOnlineIndicator" Text="[SERVER OFFLINE]" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" FontSize="8" TextColor="Red"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout x:Name="MainPuzzle" VerticalOptions="Start" Margin="20, 10, 20, 0" >
+
+        </StackLayout>
+
+        <StackLayout x:Name="Keyboard" VerticalOptions="EndAndExpand" Spacing="0" Margin="10, 0, 10, 5">
+        </StackLayout>
+
+        <StackLayout Margin="35, 0, 0, 15" Orientation="Horizontal" HorizontalOptions="Start" Spacing="1">
+            <Button x:Name="Okay" IsEnabled="False" Text="OK" Clicked="CHECKWORD" FontSize="20" Style="{StaticResource Confirm}" TextColor="Black" />
+            <Button Text="DEL" Clicked="ERASELETTER" FontSize="20"  Style="{StaticResource Delete}" TextColor="Black" />
+        </StackLayout>
+
+        <StackLayout BackgroundColor="#222222">
+            <Grid ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ToMenu" Text="MENU" Grid.Column="0" Clicked="TRASFERTOMENUPAGE" BackgroundColor="#777777" TextColor="Black" />
+                <Label x:Name="ToGame" Text="GAME" Grid.Column="1" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#ffbb88" />
+            </Grid>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

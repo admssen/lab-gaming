@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_gaming.PlayerNamePage">
+
+    <StackLayout VerticalOptions="Fill" Margin="0, 0, 0, 0" Spacing="0">
+        <StackLayout BackgroundColor="#222222">
+            <StackLayout BackgroundColor="#222222">
+                <Label x:Name="IP" Text="" FontSize="15" TextColor="#aaaaaa" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Margin="0, 10, 0, 0" />
+            </StackLayout>
+            <StackLayout BackgroundColor="Transparent" Spacing="2">
+                <Grid x:Name="IPButtons" ColumnSpacing="2" RowSpacing="2" Margin="20, 0, 20, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid ColumnSpacing="2" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Margin="20, 0, 20, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="60" />
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="PingIP" TextColor="#aaaaaa" IsEnabled="False" Text="OK" Clicked="PING" BackgroundColor="#446444" Grid.Column="3" Padding="-2" />
+                    <Button x:Name="DotIP" TextColor="#aaaaaa" IsEnabled="False" Text="." FontSize="22" Clicked="DOTIP" BackgroundColor="#444444" Grid.Column="2" Padding="-2" />
+                    <Label x:Name="ServerOnlineIndicator" Text="[SERVER OFFLINE]" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Grid.Column="1" HorizontalOptions="FillAndExpand" FontSize="8" TextColor="Red"/>
+                    <Button x:Name="ClearIP" TextColor="#aaaaaa" Text="DEL" Clicked="CLEARIP" BackgroundColor="#644444" Grid.Column="0" Padding="-2" />
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+        
+        <StackLayout BackgroundColor="#222222">
+            <Grid ColumnSpacing="2" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Margin="20, 10, 20, -10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="EraseDB" Text="[ERASE]" TextColor="#ffbb88" HorizontalTextAlignment="Start" Grid.Column="0" HorizontalOptions="Start"/>
+                <Label x:Name="PName" Text="PLAYER NAME" TextColor="#ffbb88" HorizontalTextAlignment="Center" Grid.Column="1" />
+                <Label x:Name="PDef" Text="[DEFAULT]" TextColor="#ffbb88" HorizontalTextAlignment="End" Grid.Column="2"/>
+            </Grid>
+            
+            <Grid ColumnSpacing="0" BackgroundColor="Transparent" Margin="20, 0, 20, 15" HorizontalOptions="FillAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CleanseButton" TextColor="#aaaaaa" Clicked="ERASEALLDATA" Text="BE ROOT" FontSize="10" IsEnabled="False" Margin="0, 0, 0, 0" BackgroundColor="#644444" Grid.Column="0" Padding="-2" HeightRequest="30"/>
+                <Label x:Name="PlayerName" FontSize="22" Text="" HorizontalTextAlignment="Center" TextColor="#aaaaaa" BackgroundColor="#161616" Grid.Column="1" Margin="10, 0, 10, 0"/>
+                <StackLayout Grid.Column="2" BackgroundColor="Transparent">
+                    <CheckBox x:Name="MakeNameDefault" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+
+        <StackLayout x:Name="MainPuzzle" VerticalOptions="Start" Margin="20, 10, 20, 0" >
+            <ScrollView HeightRequest="300">
+                <StackLayout x:Name="SavedPlayers" Spacing="2" Padding="20, 0, 20, 0">
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+
+        <StackLayout x:Name="Keyboard" VerticalOptions="EndAndExpand" Spacing="0" Margin="10, 0, 10, 5">
+        </StackLayout>
+
+        <StackLayout Margin="35, 0, 0, 15" Orientation="Horizontal" HorizontalOptions="Start" Spacing="1">
+            <Button Text="OK" Clicked="COMMITNAME" FontSize="20" Style="{StaticResource Confirm}" />
+            <Button Text="DEL" Clicked="BLANKNAME"  FontSize="20"  Style="{StaticResource Delete}"/>
+            <Button Text="[SPACE]" Clicked="PROCESSSPACE"  FontSize="20" WidthRequest="135" />
+        </StackLayout>
+
+        <StackLayout BackgroundColor="#222222">
+            <Grid ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ToMenu" Text="MENU" Grid.Column="0" Clicked="TRASFERTOMENUPAGE" BackgroundColor="#777777" TextColor="Black" />
+                <Label x:Name="ToGame" Text="" Grid.Column="1" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TextColor="#ffbb88" />
+            </Grid>
+
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

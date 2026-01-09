@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_gaming.LightTheme">
+    <Color x:Key="StackLayoutBackgroundColor">#8888aa</Color>
+    <Color x:Key="LabelTextColor">#121212</Color>
+    <Color x:Key="ButtonBackgroundColor">#755555</Color>
+    <Color x:Key="ButtonTextColor">#ffffcc</Color>
+
+    <Color x:Key="SpecialFieldBackgroundColor">#444455</Color>
+    <Color x:Key="SpecialTextColor">#ebb866</Color>
+
+    <Color x:Key="TimerTextColor">#000000</Color>
+
+    <Color x:Key="HistoryTextColor">#222266</Color>
+    <Color x:Key="HistoryButtonColor">#666688</Color>
+
+    <Color x:Key="ConfirmButtonColor">#556555</Color>
+    <Color x:Key="DeleteButtonColor">#655555</Color>
+</ResourceDictionary>
